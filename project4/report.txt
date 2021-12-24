@@ -1,0 +1,73 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<< 35>>>
+   
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between the <<< and >>> signs below (eg, <<<3>>>).
+
+   <<< 5>>>
+
+3. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Board Data Type)
+       Approach: My approach to this this problem was to make the instance variables. Then for me to copy the current
+       tiles array into a copy of the tiles. My thought process was to use a nested for loop since it is a 2d array and copy
+       it into the copy array from the current array list. Then for hamming/manhattan/blankPos. Well at first I made 2 seperate
+       for loops for hamming and manhattan. For hamming I made a nested loop going through the 2d array and then im checking
+       if the number is out of place and checking if its not equal to 0. And if both those checks are good then I increment hamming
+       which then will give me the number of how many numbers are out of place. For manhattan basically, I had to get the row and
+       column gap by using the formula given in the slides. For row I had to divide by n and for column I had to do modulus by n.
+       Then for the distance I had to subtract i from row and j from column but to make sure I always got a positive number
+       I used the Math.abs built in method to always get a positive number. Then I added that value to manhattan which is was
+       initialized to 0. Then for blank pos I checked if that specific position at that array is equal to 0  when i and j is iterating
+       and if it is I set blankPos to that position. by doing n which is the size of the board multiply by i + j and adding 1 to it.
+       At first I had 3 for different nested for loops but after debugging I finally got it to work under one single nested for loop.
+       Then for isGoal my thought process was that since hamming showed the numbers of how many numbers were out of place
+       I just checked if hamming was equal to 0 then that means that is the goal board since no numbers are out of place.
+       Then for issolvable I made a counter but a single array with the size n*n and looped through the 2darray and copying
+       the objects in there into the single array.  While doing so im incrementing C so then its copying and updating the index
+       of the single array. Then after I used the Inversions.count and check if it divided by 2 cause if it was even then it means
+       it is solvable but if it is odd then that means the board isn't solvable. By using modoulus I can check
+       if the board is even or odd. Then for neighbors I made a new double array to copy the array. Then I constructed
+       variables called i and j which is the row and column of the array. Then I checked up down left right checking if it is
+       and empty spot there and swapping the appropriate number into that blank position. By swapping it I used a temp value. Then for me
+       to check if this board is the same as the other board I used a nested loop to check if the indexes match up with the other Board
+       and if it doesnt then return False/True depending on the check.
+
+
+       Issues and resolution: My issue that I ran into was not knowing how to get the row and column and after going through
+       the slides I had found the row number major in the slides from the discussion. One issue was the running time
+       I had 3 different nested for loop but after looking at it and debugging for a few hours. I finally got it to work under one
+       single nested for loop. Another issue I had was comparing it this board to the other board. After asking questions
+       Kyle hinted to me that I had to use a loop to go through ixj and basically do my check in there.
+
+   Problem 2 (Solver Data Type)
+       Approach: Well I wasnt beable to finish this but How I thought it would work is that in the solver method set up a Minpq called pq
+       and have 2 while loops the first one is checking if pq is not empty and if its not then use the delmin library to delete
+       the smallest node. Then check im going to check if the node board is the goal which im using a method from the previous
+       problem and if it has been solved then ill break. But i would forloop to iterate through that board while checking
+       if it has been solved and if it is then push it to the first solution stack. Then for the Search Node im comparing
+       the node and the other node. I honestly think in order to do this I had to use an equation to check the difference
+       of the manhattan distance to the node + the number of moves to the node. In order to implement this I think I had to make
+       an instance variable to get the # of moves then compare it by subtracting it to the manhattan distance of the board
+       then returning that value.
+
+       Issues and resolution: One big issue I ran into was not knowing how to implement what I had in mind into code.
+       Therefore I couldn't get this problem done. Also I couldn't fully conceptualize it.
+
+4. Did you receive help from anyone? List their names, status (classmate,
+   CS210 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   Brendan Nguyen      Student        Help me conceptualize how issolvable works
+   Kyle Hackett         TA/Discussion Leader    Helped me conceptualize Hamming and manhattan distance
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   ;( T-T it was very challenging
